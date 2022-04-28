@@ -1,17 +1,19 @@
 window.app = {
     /* 开发环境 */
-    serverUrl: "http://localhost:8088",                                   // 接口服务接口地址
-    paymentServerUrl: "http://192.168.1.3:8089",                          // 支付中心服务地址
-    shopServerUrl: "http://localhost:8080/foodie-shop/",                  // 门户网站地址
-    centerServerUrl: "http://localhost:8080/foodie-center/",              // 用户中心地址
-    cookieDomain: "",                                                     // cookie 域
+    // serverUrl: "http://localhost:8088",                                   // 接口服务接口地址
+    // paymentServerUrl: "http://192.168.1.3:8089",                          // 支付中心服务地址
+    // shopServerUrl: "http://localhost:8080/foodie-shop/",                  // 门户网站地址
+    // centerServerUrl: "http://localhost:8080/foodie-center/",              // 用户中心地址
+    // cookieDomain: "",                                                     // cookie 域
 
-    /* 生产环境  */ 
-    //serverUrl: "http://8.141.50.179:8088/foodMart-api",                  // 接口服务接口地址（后端项目地址）
-    //paymentServerUrl: "http://payment.t.mukewang.com/foodie-payment",    // 支付中心服务地址
-    //shopServerUrl: "http://8.141.50.179:8080/foodie-shop/",              // 门户网站地址，就是我们这个前端的文件名
-    //centerServerUrl: "http://8.141.50.179:8080/foodie-center/",     // 用户中心地址
-    //cookieDomain: "foodieshop.ltd",            	// cookie域（主要是多个域名才会需要设置，这里就一个域名，可以不设置）
+    /* 生产环境 */
+    serverUrl: "http://43.138.12.238:20004",                                 // 接口服务接口地址--->后端Gateway
+    paymentServerUrl: "http://payment.t.mukewang.com/foodie-payment",         // 支付中心服务地址
+    shopServerUrl: "http://81.70.242.107:8080/foodie-shop/",                  // 门户网站地址，就是我们这个前端的文件名
+    centerServerUrl: "http://81.70.242.107:8080/foodie-center/",              // 用户中心地址
+    // cookieDomain: "foodieshop.ltd",            	// cookie域（主要是多个域名才会需要设置，这里就一个域名，可以不设置）
+    // 千万注意：当我们用网关层转发前后端(从根本解决跨域)，前端的domain是网关层的IP或域名，而不再是前端项目所在的IP或域名！！！
+    cookieDomain: "43.138.12.238",
 
     ctx: "/foodie-shop",
 

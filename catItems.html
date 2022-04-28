@@ -137,7 +137,7 @@
 						</p>
 					</div>
 					<div class="footer-bd ">
-						<p><em>© 2021 xxka.com 京ICP备03150609号-97 白白胖胖有限公司 版权所有</em></p>
+						<p><em>© 2021 xxka.com 京ICP备03150609号-97 BBPP有限公司 版权所有</em></p>
 					</div>
 				</div>
 			</div>
@@ -360,8 +360,7 @@
 					// debugger;
 					var serverUrl = app.serverUrl;
 					axios.defaults.withCredentials = true;
-					//axios.get(serverUrl + '/items/search?keywords=' + keywords + "&sort=" + sort + "&page=" + page + "&pageSize=" + pageSize, {})
-					axios.get('http://localhost:8033/items/search?keywords=' + keywords + "&sort=" + sort + "&page=" + page + "&pageSize=" + pageSize, {})
+					axios.get(serverUrl + '/items/search?keywords=' + keywords + "&sort=" + sort + "&page=" + page + "&pageSize=" + pageSize, {})
 						.then(res => {
 							if (res.data.status == 200) {
 								var grid = res.data.data;
