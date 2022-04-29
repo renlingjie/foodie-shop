@@ -127,17 +127,18 @@
 					axios.post(serverUrl + '/passport/login', userBO)
 						.then(res => {
 							if (res.data.status == 200) {
-								var user = res.data;
-								// console.log(user);
-
-								// window.location.href = app.ctx + "/index.html";
+								// 将鉴权得到的信息放到前端的localStorage中
+								var uid = res.headers["rlj-user-id"];
+								var token = res.headers.authorization;
+								window.localStorage.setItem("uid", uid);
+								window.localStorage.setItem("token", token);
 								if (returnUrl != null && returnUrl != undefined && returnUrl != '') {
 									window.location.href = returnUrl;
 								} else {
 									window.location.href = "index.html";
 								}
 
-							} else if (res.data.status == 500) {
+							} else {
 								alert(res.data.msg);
 								return;
 							}
