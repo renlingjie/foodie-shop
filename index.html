@@ -383,8 +383,6 @@
 					this.userInfo = {};
 				}
 
-				// 渲染轮播图
-				this.renderCarousel();
 				// 渲染分类
 				this.renderCategorys();
 				// 渲染分类下最新商品
@@ -392,6 +390,11 @@
 
 				// 从购物车中拿到商品的数量
 				this.shopcartItemCounts = app.getShopcartItemCounts();
+			},
+			mounted() {
+				// 渲染轮播图---->有时候报错Cannot read properties of undefined (reading 'addSlide')，
+				// 可能是渲染轮播图的amazeui还没有加载，所以不在created中，而是放到后面的mounted中
+				this.renderCarousel();
 			},
 			methods: {
 				goUserCenter() {
@@ -584,7 +587,7 @@
 													}
 												});
 										}
-										// var renderHtml = '' 
+										// var renderHtml = ''
 										// 	+ '<dl class="dl-sort">'
 										// 		+ '<dt><span title="大包装">大包装</span></dt>'
 										// 		+ '<dd><a title="蒸蛋糕" href="#"><span>蒸蛋糕</span></a></dd>'
